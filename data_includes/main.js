@@ -139,12 +139,6 @@ const trialN = () => [
     .settings.global()
     .set((v) => v + 1),
 ];
-// Trial number
-const getRT = (label) => [
-  newVar(label)
-    .global()
-    .set(() => Date.now()),
-];
 // Demo
 const newDemo = (label, text) => [
   newTextInput(label)
@@ -169,6 +163,7 @@ const newDemo = (label, text) => [
 ];
 // Question
 const newQ = () => [
+  newTimer("hurry", 5000).start(),
   newText("question", "How natural was the sentence?")
     .cssContainer({ "margin-bottom": "2em" })
     .center()
@@ -190,8 +185,9 @@ const newQ = () => [
     .center()
     .keys()
     .print()
-    .wait()
+    .callback(getTimer("hurry").stop())
     .log(),
+  getTimer("hurry").wait(),
   // Make everything disappear
   getText("question").remove(),
   getScale("grade").remove(),
@@ -505,8 +501,12 @@ var trial = (label) => (row) => {
     trialN(),
     newCross(),
     newDash(row.sentence),
-    getRT("RT-answer"),
+    newVar("RT-answer", 0)
+      .settings.global()
+      .set((v) => Date.now()),
     newQ(),
+    getVar("RT-answer")
+      .set((v) => Date.now() - v),
     getVar("itemnum").set(row.id),
     getVar("type").set(row.type),
     getVar("condition").set(row.condition),
