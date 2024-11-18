@@ -1,4 +1,4 @@
-id,sentence,c2,c1,v2,comma,type,condition,grammaticality,person,Comment,,word count
+id,sentence,c2_type,c1_type,v2,comma,type,condition,grammaticality,person,Comment,,word count
 1000,"The sofa that the family bought, for their new house, was occupied by a stray dog.",filler,filler,filler,filler,filler,1_embed,1,Carmen,,16,average = 16.2840909090909
 1001,The marathon champion who broke the record set by himself won a million-dollar prize.,filler,filler,filler,filler,filler,1_embed,1,Carmen,,14,Q1 = 15
 1002,The kids in this area all know the famous theme park where they can get candies for free.,filler,filler,filler,filler,filler,r_branch,1,Carmen,,18,Q3 = 18

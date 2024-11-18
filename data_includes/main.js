@@ -175,8 +175,18 @@ const newQ = () => [
     .print(),
   newScale("grade", "1", "2", "3", "4", "5", "6", "7")
     .labelsPosition("bottom")
-    .before(newText("left", "Unnatural"))
-    .after(newText("right", "Natural"))
+    .before(
+      newText("left", "Unnatural")
+        .css("margin-right", "1em")
+        .css("margin-top", "2.5em")
+    )
+    .after(
+      newText("right", "Natural")
+        .css("margin-right", "1em")
+        .css("margin-top", "2.5em")
+    )
+    .css("margin", "10pt")
+    .cssContainer("border", "solid 1px black")
     .center()
     .keys()
     .print()
@@ -216,7 +226,7 @@ newTrial(
       "<li>You are <b>older than 18</b> years old,</li>" +
       "<li>This is your <b>first time doing this experiment</b>.</li></ol>"
   ).css(body_css),
-  newCanvas("welcome-page", 1500, 650)
+  newCanvas("welcome-page", 1500, 500)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
     .add(0, 120, getText("welcome-body"))
     .cssContainer(page_css)
@@ -254,8 +264,8 @@ newTrial(
   newDemo("geo", "Location (state, country):"),
   newDemo("comp", "Computer type (e.g. Mac, PC)*:"),
   newDemo("language", "Native language*:"),
-  newDemo("otherlg", "ther languages you speak (please list):"),
-  newCanvas("demo-page", 1500, 350)
+  newDemo("otherlg", "Other languages you speak (please list):"),
+  newCanvas("demo-page", 1500, 400)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
     .add(
       0,
@@ -383,7 +393,7 @@ newTrial(
   ).css(body_css),
   newCanvas("start-page", 1500, 300)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
-    .add(0, 120, getText("practice_good-body"))
+    .add(0, 170, getText("practice_good-body"))
     .cssContainer(page_css)
     .print(),
   newText("<p>").print(),
@@ -401,7 +411,7 @@ newTrial(
   ).css(body_css),
   newCanvas("start-page", 1500, 300)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
-    .add(0, 120, getText("practice_bad-body"))
+    .add(0, 170, getText("practice_bad-body"))
     .cssContainer(page_css)
     .print(),
   newText("<p>").print(),
@@ -421,7 +431,7 @@ newTrial(
   ).css(body_css),
   newCanvas("start-page", 1500, 300)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
-    .add(0, 120, getText("practice_break-body"))
+    .add(0, 170, getText("practice_break-body"))
     .cssContainer(page_css)
     .print(),
   newText("<p>").print(),
@@ -504,8 +514,8 @@ var trial = (label) => (row) => {
     getVar("comma").set(row.comma),
     getVar("v2").set(row.v2),
     getVar("person").set(row.person),
-    getVar("c1").set(row.c1),
-    getVar("c2").set(row.c2),
+    getVar("c1").set(row.c1_type),
+    getVar("c2").set(row.c2_type),
     getVar("RT").set(getVar("RT-answer")),
     getVar("trialN").set(getVar("TrialN"))
   );
@@ -513,72 +523,10 @@ var trial = (label) => (row) => {
 
 
 
-var practice = (label) => (row) => {
-  return newTrial(
-    label,
-    trialN(),
-    newCross(),
-    newDash(row.sentence),
-    getRT("RT-answer"),
-    newQ(),
-    newVar("dummy", 1)
-      .test.is(1)
-      .and(
-        // conjoin the test on the Scale
-        getScale("grade")
-          .test.selected()
-          .failure(
-            newText(
-              "<p style=font-family:helvetica;color:red padding-bottom: 25px>Too Slow!</p>"
-            ).print()
-          )
-      )
-      .and(
-        // conjoin the test on the Function
-        // We use the dummy array [-1,100] so that the second entry (index 1, ie value 100) is greater than 49
-        newFunction(() => {
-          const c = getScale("grade")._element.choices;
-          return (c[c.length - 1] || [-1, 6])[1] >= row.ungrammaticality;
-        })
-          .test.is(true)
-          .success(
-            newText(
-              "<p style=font-family:helvetica;color:darkgreen padding-bottom: 25px>Great!</p>" +
-                "<p>Press space to continue!"
-            ).print()
-          )
-          .failure(
-            newText(
-              "<p style=font-family:helvetica;color:red padding-bottom: 25px>Read more carefully!</p>" +
-                "<p>Press space to continue!"
-            ).print()
-          )
-      )
-      .failure(
-        // All this is common to the no-choice and the low-value scenarios
-        newText("This should never show up").print()
-      ),
-      newKey(" ").wait() ,
-    getVar("itemnum").set(row.id),
-    getVar("type").set(row.type),
-    getVar("condition").set(row.condition),
-    getVar("text").set(row.sentence),
-    getVar("comma").set(row.comma),
-    getVar("v2").set(row.v2),
-    getVar("person").set(row.person),
-    getVar("c1").set(row.c1),
-    getVar("c2").set(row.c2),
-    getVar("RT").set(getVar("RT-answer")),
-    getVar("trialN").set(getVar("TrialN"))
-  );
-};
-
-
-
-Template(GetTable(fname_practice_first), practice("practice_first"));
-Template(GetTable(fname_practice_good), practice("practice_good_item"));
-Template(GetTable(fname_practice_bad), practice("practice_bad_item"));
-Template(GetTable(fname_practice), practice("practice_rest"));
+Template(GetTable(fname_practice_first), trial("practice_first"));
+Template(GetTable(fname_practice_good), trial("practice_good_item"));
+Template(GetTable(fname_practice_bad), trial("practice_bad_item"));
+Template(GetTable(fname_practice), trial("practice_rest"));
 
 Template(GetTable(fname_filler), trial("filler"));
 Template(GetTable(fname_exp), trial("exp"));
