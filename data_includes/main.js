@@ -36,7 +36,8 @@ Header(
   newVar("c1").global(),
   newVar("c2").global(),
   newVar("grammatical").global(),
-  newVar("RT").global()
+  newVar("RT").global(),
+  newVar("Group").global()
 )
   .log("PROLIFIC_ID", GetURLParameter("id"))
   .log("itemnum", getVar("itemnum"))
@@ -49,7 +50,8 @@ Header(
   .log("person", getVar("person"))
   .log("c1", getVar("c1"))
   .log("c2", getVar("c2"))
-  .log("RT", getVar("RT"));
+  .log("RT", getVar("RT"))
+  .log("Group", getVar("Group"));
 
 // List of constants
 const cross_time = 2000;
@@ -188,6 +190,7 @@ const newQ = () => [
     .callback(getTimer("hurry").stop())
     .log(),
   getTimer("hurry").wait(),
+  newTimer(500).start().wait(),
   // Make everything disappear
   getText("question").remove(),
   getScale("grade").remove(),
@@ -211,7 +214,7 @@ newTrial(
     "<center><b>Welcome!</b></center>" +
       "<p>Please read these instruction sections carefully! " +
       "If you fail to understand the task, your data will NOT be usable." +
-      "<p>In this experiment, you will be reading some sentences and judge them.." +
+      "<p>In this experiment, you will read some sentences and be asked to judge them for naturalness." +
       "<p>This experiment requires your FULL ATTENTION. " +
       "The experiment is reasonably brief. Most people find that the study takes around 30 minutes. " +
       "<p>Before proceeding please make sure:<ol>" +
@@ -237,9 +240,9 @@ newTrial(
   newText(
     "consent-body",
     "<center><b>Consent Form</b></center>" +
-      "<p>Please click <a target='_blank' rel='noopener noreferrer' href='https://utkuturk.com/files/web_consent.pdf'> here</a> to download the consent form for this study. If you read it and agree to participate in this study, click 'I Agree' below. If you do not agree to participate in this study, you can leave this study by closing the tab. You can leave the experiment at any time by closing the tab during the experiment. If you leave the experiment before completion of both parts, you will not be compensated for your time. If you encounter any problems, do not hesitate to reach us either via " +
-      // "Prolific or e-mail." +
-      "email. " +
+      "<p>Please click <a target='_blank' rel='noopener noreferrer' href='https://utkuturk.com/files/web_consent.pdf'> here</a> to download the consent form for this study. If you read it and agree to participate in this study, click 'I Agree' below. If you do not agree to participate in this study, you can leave this study by closing the tab. You can leave the experiment at any time by closing the tab during the experiment. If you leave the experiment before completion of both parts, you will not be compensated for your time. If you encounter any problems, do not hesitate to reach either of us  via " +
+      "Prolific or e-mail." +
+      // "email. " +
       "<br><br><b> Researchers:</b> <br>Utku Turk, PhD Student <i> (utkuturk@umd.edu)</i>,<br>Prof. Ellen Lau<br>University of Maryland, Department of Linguistics"
   ).css(body_css),
   newCanvas("consent-page", 1500, 500)
@@ -346,7 +349,7 @@ newTrial(
   newText(
     "instruction-text",
     "<center><b>Instructions</b></center><br>" +
-      "In this experiment, you will see sentences in the following fashion and judge them using your mouse or keyboard. Now, read the following sentence using the space bar to reveal words one by one  and rate how natural the sentence is to you by clicking a number from 1 to 7. You can also use your keyboard by pressing a number between 1 and 7. 1 means sentence is completely unnatural and not understandable. 7 means sentence is perfectly natural and understandable.<br><br><br>"
+      "In this experiment, you will use your keyboard to reveal sentences one word at a time. After you have read the sentence, you will be asked to judge it by using your mouse or keyboard to select a value on a scale from 1 to 7. 1 means you found the sentence completely unnatural and not understandable. 7 means the sentence is perfectly natural and understandable. Click 'See an Example' below to see how it works before you begin the experiment.<br><br><br>"
   )
     .center()
     .css(body_css),
@@ -385,7 +388,7 @@ newTrial(
   "practice_good",
   newText(
     "practice_good-body",
-    "That's all there is to it! Let's try some practice passages more like the ones you'll be seeing in the experiment. We would expect you to find the following passages GOOD."
+    "That's all there is to it! Let's try some practice sentences more like the ones you'll be seeing in the experiment. We would expect you to find the following sentences NATURAL (higher numbers on the scale)."
   ).css(body_css),
   newCanvas("start-page", 1500, 300)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
@@ -394,7 +397,7 @@ newTrial(
     .print(),
   newText("<p>").print(),
   newButton("CONTINUE").bold().css(button_css).print().wait(),
-  newTimer(300).start().wait(),
+  newTimer(300).start().wait()
 );
 
 
@@ -403,7 +406,7 @@ newTrial(
   newText(
     "practice_bad-body",
     "Some sentences, like the one you just read, are acceptable sentences in English." +
-    "<p>Try your hand at these next few sentences, which should be judged as BAD."
+      "<p>Try your hand at these next few sentences, which should be judged as UNNATURAL (lower numbers on the scale)."
   ).css(body_css),
   newCanvas("start-page", 1500, 300)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
@@ -446,7 +449,7 @@ newTrial(
     "<center><b>Time to start the experiment!</b></center><br><br>" +
     "<p>Before continuing, please double-check " +
       "that you are in a quiet environment with minimal or no background noise." +
-      "<p>You can press any key to start the experiment."
+      "<p>You can press 'Continue'  to start the experiment."
   ).css(body_css),
   newCanvas("start-page", 1500, 300)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
@@ -505,8 +508,7 @@ var trial = (label) => (row) => {
       .settings.global()
       .set((v) => Date.now()),
     newQ(),
-    getVar("RT-answer")
-      .set((v) => Date.now() - v),
+    getVar("RT-answer").set((v) => Date.now() - v),
     getVar("itemnum").set(row.id),
     getVar("type").set(row.type),
     getVar("condition").set(row.condition),
@@ -516,6 +518,7 @@ var trial = (label) => (row) => {
     getVar("person").set(row.person),
     getVar("c1").set(row.c1_type),
     getVar("c2").set(row.c2_type),
+    getVar("Group").set(row.Group),
     getVar("RT").set(getVar("RT-answer")),
     getVar("trialN").set(getVar("TrialN"))
   );

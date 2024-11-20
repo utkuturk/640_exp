@@ -1,96 +1,96 @@
-id,sentence,c2_type,c1_type,v2,comma,type,condition,grammaticality,person,Comment,,word count
-1000,"The sofa that the family bought, for their new house, was occupied by a stray dog.",filler,filler,filler,filler,filler,1_embed,1,Carmen,,16,average = 16.2840909090909
-1001,The marathon champion who broke the record set by himself won a million-dollar prize.,filler,filler,filler,filler,filler,1_embed,1,Carmen,,14,Q1 = 15
-1002,The kids in this area all know the famous theme park where they can get candies for free.,filler,filler,filler,filler,filler,r_branch,1,Carmen,,18,Q3 = 18
-1003,The beach cleanup organized by volunteers was reported in the news headline.,filler,filler,filler,filler,filler,no_wh,1,Carmen,,12,
-1004,The anonymous chef who won the cooking competition broasted on TV has launched a new restaurant.,filler,filler,filler,filler,filler,1_embed,1,Carmen,,16,
-1005,"The five-year-old kid who is well-trusted by the family, was planning a hiking trip, in the mountains.",filler,filler,filler,filler,filler,1_embed,0,Carmen,,17,
-1006,"The popular singer, who held a pop-up concert in a large stadium, attracted thousands of people to come.",filler,filler,filler,filler,filler,commas,1,Carmen,,18,
-1007,"The orchestra hired a conductor, who is known for forgetting to bring his baton.",filler,filler,filler,filler,filler,r_branch,0,Carmen,,13,
-1008,The founder of the chain coffee shop decided to launch pastries and tea sections for the shop.,filler,filler,filler,filler,filler,coordinate,1,Carmen,,10,
-1009,I think who I know the candidate is I interviewed with the board this morning.,filler,filler,filler,filler,filler,island,0,Carmen,,14,
-1010,Every student in the art school carries an instrument and practices in public for their concerts.,filler,filler,filler,filler,filler,coordinate,1,Carmen,,9,
-1011,"Paul forgot which paper sent, by his classmate, he wanted to read was published.",filler,filler,filler,filler,filler,island,0,Carmen,,13,
-1012,Mary forgot which planet she wanted to return the book on Sunday before the demon destroys.,filler,filler,filler,filler,filler,island,0,Carmen,,15,
-1013,The computer which we bought three months ago is still unopened and sitting in the box in the corner.,filler,filler,filler,filler,filler,coordinate,1,Carmen,,19,
-1014,"The mug fell, on the ground and, broke into hundreds of little pieces.",filler,filler,filler,filler,filler,commas,0,Will,,18,
-1015,The robot had to replace the wires itself had installed.,filler,filler,filler,filler,filler,binding,0,Will,,19,
-1016,The scientist had no idea what book the author who wrote gave the talk.,filler,filler,filler,filler,filler,island,0,Will,,21,
-1017,The waiter wondered what the customer ordered and eggs.,filler,filler,filler,filler,filler,coordinate,0,Will,,16,
-1018,"The monster, which the knight slew the day before, rose from the dead.",filler,filler,filler,filler,filler,1_embed,1,Will,,18,
-1019,The rock which the miner broke open turned out to have a rare crystal inside.,filler,filler,filler,filler,filler,1_embed,1,Will,,19,
-1020,"No one expected that the vase, which the potter had made for fun, would end up in a museum.",filler,filler,filler,filler,filler,1_embed,1,Will,,16,
-1021,"The rabbit, who the tortoise defeated in the race, ended up learning to take life a little slower.",filler,filler,filler,filler,filler,1_embed,1,Will,,19,
-1022,The furniture which the mover had to bring into the apartment was way too big for the small space.,filler,filler,filler,filler,filler,1_embed,1,Will,,22,
-1023,The resident of the building the landlord had recent refurnished was glad the tiny living room could seat so many people.,filler,filler,filler,filler,filler,1_embed,1,Will,,18,
-1024,"The blueprint the architect had drawn up was beautiful, but impossible for anyone to actually construct.",filler,filler,filler,filler,filler,1_embed,1,Will,,17,
-1025,The race was won by the runner who beat the world record which the previous champion had set.,filler,filler,filler,filler,filler,r_branch,1,Will,,18,
-1026,"The bag was torn apart by the groceries, which the cashier had decided weren't heavy enough to break anything.",filler,filler,filler,filler,filler,r_branch,1,Will,,16,
-1027,The plane landed at the airport which all of the townspeople thought made too much noise. ,filler,filler,filler,filler,filler,r_branch,1,Will,,15,
-1028,"The interior designer thought the room, which they had been hired to furnish, needed at least three massive couches.",filler,filler,filler,filler,filler,r_branch,1,Will,,20,
-1029,The clown was excited to compete in the tournament that would prove to the world who was the best at making jokes.,filler,filler,filler,filler,filler,r_branch,1,Will,,19,
-1030,"The solar eclipse is a golden opportunity to find a spot on the quad, chilling with your friends.",filler,filler,filler,filler,filler,r_branch,1,Matthew,,16,
-1031,"The leaves turned yellow overnight, reminding the squirrels to hurry up and find enough nuts for winter.",filler,filler,filler,filler,filler,r_branch,1,Matthew,"""reminding the squirrels of"" → ""reminding the squirrels to""",17,
-1032,The kid was taught by the chef to put some ice into the dough to make it tender.,filler,filler,filler,filler,filler,r_branch,1,Matthew,"""the chef working..."" → ""the chef who worked...""",18,
-1033,"The production of the drama series has been halted, since the major acting crew boycotted itself.",filler,filler,filler,filler,filler,r_branch,0,Matthew,,18,
-1034,"Unanimously approved, the investment proposal aimed the company to promote clean energy in the industry.",filler,filler,filler,filler,filler,r_branch,0,Matthew,,17,
-1035,"The little beaver appeared to be chewing on the oak tree, despite the fact that there was an apple nearby.",filler,filler,filler,filler,filler,r_branch,1,Matthew,"Maybe ""eating"" → ""chewing on""?",21,
-1036,The readers asked what the local library kept the indoor temperature very low because most books are sensitive to.,filler,filler,filler,filler,filler,r_branch,0,Matthew,,15,
-1037,Eric went to bed earlier than usual to prevent himself from falling asleep during tomorrow's interview.,filler,filler,filler,filler,filler,r_branch,1,Matthew,,16,
-1038,The singer who is renowned for her emotional lyrics released a surprise studio album days before Christmas.,filler,filler,filler,filler,filler,1_embed,1,Matthew,"""the emotional lyrics"" → ""emotional lyrics"" or ""her emotional lyrics""",18,
-1039,The scientists wondered when the controversial physics question puzzled the academia for years before the cold war ended.,filler,filler,filler,filler,filler,1_embed,0,Matthew,,18,
-1040,The social worker kept wondering who the parents hired the new babysitter and tried to get rid of.,filler,filler,filler,filler,filler,1_embed,0,Matthew,,18,
-1041,"From the observatory, the tourists can hunt for the treasure chest in which the map is hidden. ",filler,filler,filler,filler,filler,1_embed,1,Matthew,,21,
-1042,"During Thanksgiving, father made a finely roasted turkey, mother made a series of stews, and the children prepared a nice cake.",filler,filler,filler,filler,filler,conjunction,1,Matthew,,16,
-1043,"In Zootopia, the gorillas, pandas, and llamas were fined the zoo patrol police for speeding.",filler,filler,filler,filler,filler,conjunction,0,Matthew,,21,
-1044,"The pediatrician told the parents of the girl, who was ill, which medicine to give her.",filler,filler,filler,filler,filler,1_embed,1,Tessa,,16,
-1045,The elderly notary who taught herself to use the new software received a lottery ticket for her birthday.,filler,filler,filler,filler,filler,1_embed,1,Tessa,,21,
-1046,"John knew what the eating contest, which took place on Saturday, crowned two winners after someone complained about.",filler,filler,filler,filler,filler,r_branch,0,Tessa,changed,13,
-1047,The preschool teacher asked the kids which cookies and juice to drink they preferred to eat after napping.,filler,filler,filler,filler,filler,coordinate,0,Tessa,,14,
-1048,"The butler who worked for the millionaire, who for thirty years walked out of his house, for the last time yesterday.",filler,filler,filler,filler,filler,1_embed,0,Tessa,,16,
-1049,The girl who likes to bake cakes which look painted sold them at the bake sale.,filler,filler,filler,filler,filler,r_branch,1,Tessa,changed,17,
-1050,The fork which sat in the drawer next to the big spoons was missing its handle and its owner wondered how.,filler,filler,filler,filler,filler,1_embed,1,Tessa,,18,
-1051,The front page of the newspaper which reports scientific discoveries and opinions was ripped to shreds.,filler,filler,filler,filler,filler,1_embed,1,Tessa,,17,
-1052,"The drawer of the desk, which the economist bought last month, started to get stuck when he went back to work.",filler,filler,filler,filler,filler,1_embed,1,Tessa,,14,
-1053,"The book, which the publisher marketed bravely, was banned for children under thirteen.",filler,filler,filler,filler,filler,1_embed,1,Tessa,,14,
-1054,The software engineer asked his boss which program was best for himself after writing.,filler,filler,filler,filler,filler,1_embed,0,Tessa,,14,
-1055,"From under the bed the cat saw, which paws of the dog, who hunted scared away.",filler,filler,filler,filler,filler,r_branch,0,Tessa,,16,
-1056,The laptop blinked lights indicating which color the battery level was low and needed to be charged.,filler,filler,filler,filler,filler,coordinate,0,Tessa,,13,
-1057,"The watch on the TV commercial, which played all night, was bought for himself on the producer's behalf.",filler,filler,filler,filler,filler,1_embed,0,Tessa,,15,
-1058,The laptop which the student had borrowed contained all the notes he needed for his final exam.,filler,filler,filler,filler,filler,1_embed,1,Danni,,19,
-1059,The student whose project won first place will receive a scholarship to study abroad.,filler,filler,filler,filler,filler,1_embed,1,Danni,,16,
-1060,What surprised me was the fact that which project the students completed on time.,filler,filler,filler,filler,filler,1_embed,0,Danni,Try: X(Person) was surprised by which project that the student was/created completed on time. (?),18,
-1061,The teacher heard the rumor which exam the student passed was due to cheating.,filler,filler,filler,filler,filler,1_embed,0,Danni,,15,
-1062,The athlete who trained hard to improve himself finally achieved his goal of winning the championship.,filler,filler,filler,filler,filler,1_embed,1,Danni,,16,
-1063,The artist who taught himself to paint became well-known for his unique style.,filler,filler,filler,filler,filler,1_embed,1,Danni,,15,
-1064,The boy found a treasure chest that was buried under the sand by the shore.,filler,filler,filler,filler,filler,r_branch,1,Danni,"You could even add another relative clause! ""...in a box under the sand..."" or some such",13,
-1065,The organizer who helped put on the event will go to another city to host a conference next month.,filler,filler,filler,filler,filler,r_branch,1,Danni,☑️,16,
-1066,She bought a book and a magazine that everyone was curious about why was so popular.,filler,filler,filler,filler,filler,r_branch,0,Danni,Nice!,17,
-1067,The fact that John won a prize for his symphony surprised everyone who couldn't figure out who composed.,filler,filler,filler,filler,filler,r_branch,0,Danni,☑️,15,
-1068,"The scientist challenged himself to solve the complex puzzle, which had stumped others for years.",filler,filler,filler,filler,filler,r_branch,1,Danni,,15,
-1069,The author motivated herself to finish the manuscript that she had been working on for months.,filler,filler,filler,filler,filler,r_branch,1,Danni,,17,
-1070,The restaurant where we ate which serves Italian food that my friend recommended is nearby.,filler,filler,filler,filler,filler,r_branch,0,Danni,,16,
-1071,"She, walked to the store, bought some milk, and, then came back home.",filler,filler,filler,filler,filler,commas,0,Danni,,15,
-1072,The chef who trained in Paris prepared a gourmet meal that delighted everyone at the event.,filler,filler,filler,filler,filler,1_embed,1,Hande,,15,
-1073,The scientist who specialized in marine biology led a research project that fascinated everyone at the conference.,filler,filler,filler,filler,filler,1_embed,1,Hande,,20,
-1074,The mountain which was covered in snow year-round stood majestically over the small village below.,filler,filler,filler,filler,filler,1_embed,1,Hande,,18,
-1075,He found a restaurant and a cafe that nobody could explain how became so famous.,filler,filler,filler,filler,filler,1_embed,0,Hande,,14,
-1076,She discovered a bookstore and a gallery that no one could remember how first became so popular.,filler,filler,filler,filler,filler,1_embed,0,Hande,,15,
-1077,She mentioned a movie and a director that people kept asking when would visit the festival.,filler,filler,filler,filler,filler,1_embed,0,Hande,,18,
-1078,The artist who pushed herself to explore new styles eventually gained recognition for her work,filler,filler,filler,filler,filler,1_embed,1,Hande,,14,
-1079,The scientist who challenged himself to solve complex problems made a breakthrough in his field.,filler,filler,filler,filler,filler,1_embed,1,Hande,,12,
-1080,They watched a movie that was directed by a friend who studied film in France where she met her husband.,filler,filler,filler,filler,filler,r_branch,1,Hande,,13,
-1081,We adopted a dog that was trained by a handler who specializes in rescuing animals that assist firefighters.,filler,filler,filler,filler,filler,r_branch,1,Hande,,16,
-1082,The rumor that Sarah left the company shocked everyone who wondered why she decided.,filler,filler,filler,filler,filler,r_branch,0,Hande,,15,
-1083,The announcement that the event was canceled disappointed all who tried to understand what caused.,filler,filler,filler,filler,filler,r_branch,0,Hande,,14,
-1084,The student encouraged herself to complete the research project that had taken up so much of her time.,filler,filler,filler,filler,filler,r_branch,1,Hande,,18,
-1085,The musician inspired himself to compose the song that he had envisioned for years.,filler,filler,filler,filler,filler,r_branch,1,Hande,,13,
-1086,The flimsy wall which the interior designer vividly painted crumbled to dust,filler,filler,filler,filler,filler,1_embed,1,Jackson,✔️,15,
-1087,The glistening sculture which the lonely artist quickly sculpted of herself stood tall,filler,filler,filler,filler,filler,1_embed,1,Jackson,liked this one! :),17,
-1088,The heavy backpack was picked up by the teacher who despised children who talked too much,filler,filler,filler,filler,filler,r_branch,1,Jackson,✔️,,
-1089,The very full trash was emptied by the happy janitor who loved himself too much,filler,filler,filler,filler,filler,r_branch,1,Jackson,✔️,,
-1090,The old skyscraper which dwarfed the people standing it's base near was eventually demolished,filler,filler,filler,filler,filler,1_embed,0,Jackson,,,
-1091,The bed who which the sad child cried herself to sleep on was built by her happy mother,filler,filler,filler,filler,filler,1_embed,0,Jackson,,,
-1092,The rusty outlet sparked the clumsy eletrician who poorly installed for himself it,filler,filler,filler,filler,filler,r_branch,0,Jackson,,,
-1093,"Colonge, the storekeeper who who stocked nothing other than tried to sell groceries for once",filler,filler,filler,filler,filler,1_embed,0,Jackson,,,
-1094,The furniture was lost by the student who turned themself into the police station for disorderly conduct,filler,filler,filler,filler,filler,r_branch,1,Jackson,,,
+id,sentence,c2_type,c1_type,v2,comma,type,condition,grammaticality,person,Comment,,Group
+1000,"The sofa that the family bought, for their new house, was occupied by a stray dog.",filler,filler,filler,filler,filler,1_embed,1,Carmen,,16,filler
+1001,The marathon champion who broke the record set by himself won a million-dollar prize.,filler,filler,filler,filler,filler,1_embed,1,Carmen,,14,filler
+1002,The kids in this area all know the famous theme park where they can get candies for free.,filler,filler,filler,filler,filler,r_branch,1,Carmen,,18,filler
+1003,The beach cleanup organized by volunteers was reported in the news headline.,filler,filler,filler,filler,filler,no_wh,1,Carmen,,12,filler
+1004,The anonymous chef who won the cooking competition broasted on TV has launched a new restaurant.,filler,filler,filler,filler,filler,1_embed,1,Carmen,,16,filler
+1005,"The five-year-old kid who is well-trusted by the family, was planning a hiking trip, in the mountains.",filler,filler,filler,filler,filler,1_embed,0,Carmen,,17,filler
+1006,"The popular singer, who held a pop-up concert in a large stadium, attracted thousands of people to come.",filler,filler,filler,filler,filler,commas,1,Carmen,,18,filler
+1007,"The orchestra hired a conductor, who is known for forgetting to bring his baton.",filler,filler,filler,filler,filler,r_branch,0,Carmen,,13,filler
+1008,The founder of the chain coffee shop decided to launch pastries and tea sections for the shop.,filler,filler,filler,filler,filler,coordinate,1,Carmen,,10,filler
+1009,I think who I know the candidate is I interviewed with the board this morning.,filler,filler,filler,filler,filler,island,0,Carmen,,14,filler
+1010,Every student in the art school carries an instrument and practices in public for their concerts.,filler,filler,filler,filler,filler,coordinate,1,Carmen,,9,filler
+1011,"Paul forgot which paper sent, by his classmate, he wanted to read was published.",filler,filler,filler,filler,filler,island,0,Carmen,,13,filler
+1012,Mary forgot which planet she wanted to return the book on Sunday before the demon destroys.,filler,filler,filler,filler,filler,island,0,Carmen,,15,filler
+1013,The computer which we bought three months ago is still unopened and sitting in the box in the corner.,filler,filler,filler,filler,filler,coordinate,1,Carmen,,19,filler
+1014,"The mug fell, on the ground and, broke into hundreds of little pieces.",filler,filler,filler,filler,filler,commas,0,Will,,18,filler
+1015,The robot had to replace the wires itself had installed.,filler,filler,filler,filler,filler,binding,0,Will,,19,filler
+1016,The scientist had no idea what book the author who wrote gave the talk.,filler,filler,filler,filler,filler,island,0,Will,,21,filler
+1017,The waiter wondered what the customer ordered and eggs.,filler,filler,filler,filler,filler,coordinate,0,Will,,16,filler
+1018,"The monster, which the knight slew the day before, rose from the dead.",filler,filler,filler,filler,filler,1_embed,1,Will,,18,filler
+1019,The rock which the miner broke open turned out to have a rare crystal inside.,filler,filler,filler,filler,filler,1_embed,1,Will,,19,filler
+1020,"No one expected that the vase, which the potter had made for fun, would end up in a museum.",filler,filler,filler,filler,filler,1_embed,1,Will,,16,filler
+1021,"The rabbit, who the tortoise defeated in the race, ended up learning to take life a little slower.",filler,filler,filler,filler,filler,1_embed,1,Will,,19,filler
+1022,The furniture which the mover had to bring into the apartment was way too big for the small space.,filler,filler,filler,filler,filler,1_embed,1,Will,,22,filler
+1023,The resident of the building the landlord had recent refurnished was glad the tiny living room could seat so many people.,filler,filler,filler,filler,filler,1_embed,1,Will,,18,filler
+1024,"The blueprint the architect had drawn up was beautiful, but impossible for anyone to actually construct.",filler,filler,filler,filler,filler,1_embed,1,Will,,17,filler
+1025,The race was won by the runner who beat the world record which the previous champion had set.,filler,filler,filler,filler,filler,r_branch,1,Will,,18,filler
+1026,"The bag was torn apart by the groceries, which the cashier had decided weren't heavy enough to break anything.",filler,filler,filler,filler,filler,r_branch,1,Will,,16,filler
+1027,"The plane landed at the airport which all of the townspeople thought made too much noise. ",filler,filler,filler,filler,filler,r_branch,1,Will,,15,filler
+1028,"The interior designer thought the room, which they had been hired to furnish, needed at least three massive couches.",filler,filler,filler,filler,filler,r_branch,1,Will,,20,filler
+1029,The clown was excited to compete in the tournament that would prove to the world who was the best at making jokes.,filler,filler,filler,filler,filler,r_branch,1,Will,,19,filler
+1030,"The solar eclipse is a golden opportunity to find a spot on the quad, chilling with your friends.",filler,filler,filler,filler,filler,r_branch,1,Matthew,,16,filler
+1031,"The leaves turned yellow overnight, reminding the squirrels to hurry up and find enough nuts for winter.",filler,filler,filler,filler,filler,r_branch,1,Matthew,"""reminding the squirrels of"" → ""reminding the squirrels to""",17,filler
+1032,The kid was taught by the chef to put some ice into the dough to make it tender.,filler,filler,filler,filler,filler,r_branch,1,Matthew,"""the chef working..."" → ""the chef who worked...""",18,filler
+1033,"The production of the drama series has been halted, since the major acting crew boycotted itself.",filler,filler,filler,filler,filler,r_branch,0,Matthew,,18,filler
+1034,"Unanimously approved, the investment proposal aimed the company to promote clean energy in the industry.",filler,filler,filler,filler,filler,r_branch,0,Matthew,,17,filler
+1035,"The little beaver appeared to be chewing on the oak tree, despite the fact that there was an apple nearby.",filler,filler,filler,filler,filler,r_branch,1,Matthew,"Maybe ""eating"" → ""chewing on""?",21,filler
+1036,The readers asked what the local library kept the indoor temperature very low because most books are sensitive to.,filler,filler,filler,filler,filler,r_branch,0,Matthew,,15,filler
+1037,Eric went to bed earlier than usual to prevent himself from falling asleep during tomorrow's interview.,filler,filler,filler,filler,filler,r_branch,1,Matthew,,16,filler
+1038,The singer who is renowned for her emotional lyrics released a surprise studio album days before Christmas.,filler,filler,filler,filler,filler,1_embed,1,Matthew,"""the emotional lyrics"" → ""emotional lyrics"" or ""her emotional lyrics""",18,filler
+1039,The scientists wondered when the controversial physics question puzzled the academia for years before the cold war ended.,filler,filler,filler,filler,filler,1_embed,0,Matthew,,18,filler
+1040,The social worker kept wondering who the parents hired the new babysitter and tried to get rid of.,filler,filler,filler,filler,filler,1_embed,0,Matthew,,18,filler
+1041,"From the observatory, the tourists can hunt for the treasure chest in which the map is hidden. ",filler,filler,filler,filler,filler,1_embed,1,Matthew,,21,filler
+1042,"During Thanksgiving, father made a finely roasted turkey, mother made a series of stews, and the children prepared a nice cake.",filler,filler,filler,filler,filler,conjunction,1,Matthew,,16,filler
+1043,"In Zootopia, the gorillas, pandas, and llamas were fined the zoo patrol police for speeding.",filler,filler,filler,filler,filler,conjunction,0,Matthew,,21,filler
+1044,"The pediatrician told the parents of the girl, who was ill, which medicine to give her.",filler,filler,filler,filler,filler,1_embed,1,Tessa,,16,filler
+1045,The elderly notary who taught herself to use the new software received a lottery ticket for her birthday.,filler,filler,filler,filler,filler,1_embed,1,Tessa,,21,filler
+1046,"John knew what the eating contest, which took place on Saturday, crowned two winners after someone complained about.",filler,filler,filler,filler,filler,r_branch,0,Tessa,changed,13,filler
+1047,The preschool teacher asked the kids which cookies and juice to drink they preferred to eat after napping.,filler,filler,filler,filler,filler,coordinate,0,Tessa,,14,filler
+1048,"The butler who worked for the millionaire, who for thirty years walked out of his house, for the last time yesterday.",filler,filler,filler,filler,filler,1_embed,0,Tessa,,16,filler
+1049,The girl who likes to bake cakes which look painted sold them at the bake sale.,filler,filler,filler,filler,filler,r_branch,1,Tessa,changed,17,filler
+1050,The fork which sat in the drawer next to the big spoons was missing its handle and its owner wondered how.,filler,filler,filler,filler,filler,1_embed,1,Tessa,,18,filler
+1051,The front page of the newspaper which reports scientific discoveries and opinions was ripped to shreds.,filler,filler,filler,filler,filler,1_embed,1,Tessa,,17,filler
+1052,"The drawer of the desk, which the economist bought last month, started to get stuck when he went back to work.",filler,filler,filler,filler,filler,1_embed,1,Tessa,,14,filler
+1053,"The book, which the publisher marketed bravely, was banned for children under thirteen.",filler,filler,filler,filler,filler,1_embed,1,Tessa,,14,filler
+1054,The software engineer asked his boss which program was best for himself after writing.,filler,filler,filler,filler,filler,1_embed,0,Tessa,,14,filler
+1055,"From under the bed the cat saw, which paws of the dog, who hunted scared away.",filler,filler,filler,filler,filler,r_branch,0,Tessa,,16,filler
+1056,The laptop blinked lights indicating which color the battery level was low and needed to be charged.,filler,filler,filler,filler,filler,coordinate,0,Tessa,,13,filler
+1057,"The watch on the TV commercial, which played all night, was bought for himself on the producer's behalf.",filler,filler,filler,filler,filler,1_embed,0,Tessa,,15,filler
+1058,The laptop which the student had borrowed contained all the notes he needed for his final exam.,filler,filler,filler,filler,filler,1_embed,1,Danni,,19,filler
+1059,The student whose project won first place will receive a scholarship to study abroad.,filler,filler,filler,filler,filler,1_embed,1,Danni,,16,filler
+1060,What surprised me was the fact that which project the students completed on time.,filler,filler,filler,filler,filler,1_embed,0,Danni,Try: X(Person) was surprised by which project that the student was/created completed on time. (?),18,filler
+1061,The teacher heard the rumor which exam the student passed was due to cheating.,filler,filler,filler,filler,filler,1_embed,0,Danni,,15,filler
+1062,The athlete who trained hard to improve himself finally achieved his goal of winning the championship.,filler,filler,filler,filler,filler,1_embed,1,Danni,,16,filler
+1063,The artist who taught himself to paint became well-known for his unique style.,filler,filler,filler,filler,filler,1_embed,1,Danni,,15,filler
+1064,The boy found a treasure chest that was buried under the sand by the shore.,filler,filler,filler,filler,filler,r_branch,1,Danni,"You could even add another relative clause! ""...in a box under the sand..."" or some such",13,filler
+1065,The organizer who helped put on the event will go to another city to host a conference next month.,filler,filler,filler,filler,filler,r_branch,1,Danni,☑️,16,filler
+1066,She bought a book and a magazine that everyone was curious about why was so popular.,filler,filler,filler,filler,filler,r_branch,0,Danni,Nice!,17,filler
+1067,The fact that John won a prize for his symphony surprised everyone who couldn't figure out who composed.,filler,filler,filler,filler,filler,r_branch,0,Danni,☑️,15,filler
+1068,"The scientist challenged himself to solve the complex puzzle, which had stumped others for years.",filler,filler,filler,filler,filler,r_branch,1,Danni,,15,filler
+1069,The author motivated herself to finish the manuscript that she had been working on for months.,filler,filler,filler,filler,filler,r_branch,1,Danni,,17,filler
+1070,The restaurant where we ate which serves Italian food that my friend recommended is nearby.,filler,filler,filler,filler,filler,r_branch,0,Danni,,16,filler
+1071,"She, walked to the store, bought some milk, and, then came back home.",filler,filler,filler,filler,filler,commas,0,Danni,,15,filler
+1072,The chef who trained in Paris prepared a gourmet meal that delighted everyone at the event.,filler,filler,filler,filler,filler,1_embed,1,Hande,,15,filler
+1073,The scientist who specialized in marine biology led a research project that fascinated everyone at the conference.,filler,filler,filler,filler,filler,1_embed,1,Hande,,20,filler
+1074,The mountain which was covered in snow year-round stood majestically over the small village below.,filler,filler,filler,filler,filler,1_embed,1,Hande,,18,filler
+1075,He found a restaurant and a cafe that nobody could explain how became so famous.,filler,filler,filler,filler,filler,1_embed,0,Hande,,14,filler
+1076,She discovered a bookstore and a gallery that no one could remember how first became so popular.,filler,filler,filler,filler,filler,1_embed,0,Hande,,15,filler
+1077,She mentioned a movie and a director that people kept asking when would visit the festival.,filler,filler,filler,filler,filler,1_embed,0,Hande,,18,filler
+1078,The artist who pushed herself to explore new styles eventually gained recognition for her work,filler,filler,filler,filler,filler,1_embed,1,Hande,,14,filler
+1079,The scientist who challenged himself to solve complex problems made a breakthrough in his field.,filler,filler,filler,filler,filler,1_embed,1,Hande,,12,filler
+1080,They watched a movie that was directed by a friend who studied film in France where she met her husband.,filler,filler,filler,filler,filler,r_branch,1,Hande,,13,filler
+1081,We adopted a dog that was trained by a handler who specializes in rescuing animals that assist firefighters.,filler,filler,filler,filler,filler,r_branch,1,Hande,,16,filler
+1082,The rumor that Sarah left the company shocked everyone who wondered why she decided.,filler,filler,filler,filler,filler,r_branch,0,Hande,,15,filler
+1083,The announcement that the event was canceled disappointed all who tried to understand what caused.,filler,filler,filler,filler,filler,r_branch,0,Hande,,14,filler
+1084,The student encouraged herself to complete the research project that had taken up so much of her time.,filler,filler,filler,filler,filler,r_branch,1,Hande,,18,filler
+1085,The musician inspired himself to compose the song that he had envisioned for years.,filler,filler,filler,filler,filler,r_branch,1,Hande,,13,filler
+1086,The flimsy wall which the interior designer vividly painted crumbled to dust,filler,filler,filler,filler,filler,1_embed,1,Jackson,✔️,15,filler
+1087,The glistening sculpture which the lonely artist quickly sculpted of herself stood tall,filler,filler,filler,filler,filler,1_embed,1,Jackson,liked this one! :),17,filler
+1088,The heavy backpack was picked up by the teacher who despised children who talked too much,filler,filler,filler,filler,filler,r_branch,1,Jackson,✔️,,filler
+1089,The very full trash was emptied by the happy janitor who loved himself too much,filler,filler,filler,filler,filler,r_branch,1,Jackson,✔️,,filler
+1090,The old skyscraper which dwarfed the people standing it's base near was eventually demolished,filler,filler,filler,filler,filler,1_embed,0,Jackson,,,filler
+1091,The bed who which the sad child cried herself to sleep on was built by her happy mother,filler,filler,filler,filler,filler,1_embed,0,Jackson,,,filler
+1092,The rusty outlet sparked the clumsy eletrician who poorly installed for himself it,filler,filler,filler,filler,filler,r_branch,0,Jackson,,,filler
+1093,"Colonge, the storekeeper who who stocked nothing other than tried to sell groceries for once",filler,filler,filler,filler,filler,1_embed,0,Jackson,,,filler
+1094,The furniture was lost by the student who turned himself into the police station for disorderly conduct,filler,filler,filler,filler,filler,r_branch,1,Jackson,,,filler
