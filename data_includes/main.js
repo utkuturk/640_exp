@@ -200,7 +200,7 @@ const newDash = (text) => [
   newController("DashedSentence", {s: text})
     .center()
     .print()
-    .css({"font-size": 22})
+    .css({"font-size": 24})
     .wait()
     .log()
     .remove(),
@@ -350,11 +350,11 @@ newTrial(
   newText(
     "instruction-text",
     "<center><b>Instructions</b></center><br>" +
-      "In this experiment, you will use your keyboard to reveal sentences one word at a time. After you have read the sentence, you will be asked to judge it by using your mouse or keyboard to select a value on a scale from 1 to 7. 1 means you found the sentence completely unnatural and not understandable. 7 means the sentence is perfectly natural and understandable. Click 'See an Example' below to see how it works before you begin the experiment.<br><br><br>"
+      "In this experiment, you will use your keyboard to reveal sentences one word at a time by pressing space key. After you have read the sentence, you will be asked to judge it by using your mouse or keyboard to select a value on a scale from 1 to 7. 1 means you found the sentence completely unnatural and not understandable. 7 means the sentence is perfectly natural and understandable. Click 'See an Example' below to see how it works before you begin the experiment.<p><b>Please press the spacebar only after reading each word. Rapidly pressing the spacebar will result in your exclusion from the study and you will not be compensated.</b><br><br>"
   )
     .center()
     .css(body_css),
-  newCanvas("inst-page", 1500, 350)
+  newCanvas("inst-page", 1500, 450)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
     .add(0, 120, getText("instruction-text"))
     .cssContainer(page_css)
