@@ -200,6 +200,7 @@ const newDash = (text) => [
   newController("DashedSentence", {s: text})
     .center()
     .print()
+    .css({"font-size": 22})
     .wait()
     .log()
     .remove(),
