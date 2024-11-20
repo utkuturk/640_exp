@@ -415,9 +415,8 @@ newTrial(
     .print(),
   newText("<p>").print(),
   newButton("CONTINUE").bold().css(button_css).print().wait(),
-  newTimer(300).start().wait(),
+  newTimer(300).start().wait()
   // The text above
-  newTimer(1000).start().wait()
 );
 
 
@@ -435,9 +434,8 @@ newTrial(
     .print(),
   newText("<p>").print(),
   newButton("CONTINUE").bold().css(button_css).print().wait(),
-  newTimer(300).start().wait(),
+  newTimer(300).start().wait()
   // The text above
-  newTimer(1000).start().wait()
 );
 
 
@@ -458,9 +456,8 @@ newTrial(
     .print(),
   newText("<p>").print(),
   newButton("CONTINUE").bold().css(button_css).print().wait(),
-  newTimer(300).start().wait(),
+  newTimer(300).start().wait()
   // The text above
-  newTimer(1000).start().wait()
 );
 
 // BREAK
