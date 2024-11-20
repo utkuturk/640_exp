@@ -190,7 +190,7 @@ const newQ = () => [
     .callback(getTimer("hurry").stop())
     .log(),
   getTimer("hurry").wait(),
-  newTimer(500).start().wait(),
+  newTimer("feedback",500).start().wait(),
   // Make everything disappear
   getText("question").remove(),
   getScale("grade").remove(),
