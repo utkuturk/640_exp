@@ -370,7 +370,7 @@ newTrial(
   newQ(),
   newText(
     "inst-text-2",
-    "<br>Now, you will go through some practice items to get you used to the task. For every item, you will have 5 seconds to judge the sentence. If you do not judge the sentence in 5 seconds, the experiment will continue to the next item."
+    "<br>Now, you will go through some practice items to get you used to the task. For every item, you will have 5 seconds to judge the sentence. If you do not judge the sentence in 5 seconds, the experiment will continue to the next item. If you do not have enough sentences answered, your data will not be usable and you will be excluded."
   ).css(body_css),
   newCanvas("inst-page-2", 1500, 250)
     .add(100, 20, newImage("umd_ling.png").size("60%", "auto"))
