@@ -1,0 +1,365 @@
+---
+title: 640 Class Experiment Report
+author: Utku Turk
+date: Dec 8, 2020
+---
+
+# Introduction
+
+- In this experiment, we tested technically grammatical but not really acceptable sentences, such as *The cheese the rat the cat chased wanted was eaten*.
+- Previous research shows that people do not really like these sentences.
+- However, when you delete the second verb, suddenly they start liking the sentence, relatively.
+- Gibson & Thomas (1999) showed that people prefer the sentence *The cheese the rat the cat chased was eaten* to the original sentence.
+- This effect is called *the missing verb effect*.
+- The missing verb effect has been attested in many languages like German (Haussler and Bader 2015), French (Gimenes et al 2009), Dutch (Franck et al 2016), and Turkish (Dokudan 2017, Bakay 2021).
+- This effect has been attributed to limited memory (Gibson & Thomas, 1999) or interference in short term memory (Vasishth & Lewis 2005) or lack of alingment in syntax-prosdy interface (Fodor 2013).
+- In this work, we tested the role of prosody in the missing verb effect.
+- Bakay (2021) shows that the missing verb effect in Turkish only arises when there is a syncretic case assignment or a balanced prosodic structure.
+- She manipulates the prosodic structure by showing certain words together.
+- In this experiment, we tested the role of prosody in the missing verb effect in English, using Appositive Relative Clauses (ARCs).
+- English changes the prosodic structure of the sentence when there is an ARC. ARCs in English are marked with a comma in written format and pause in speech format.
+
+# Methodology
+
+- We used a self-paced reading task to test the missing verb effect in English on PCIbex.
+- Native monolingual english speaker participants N=20 found in Prolific.
+- Experiment approximately took 40 minutes.
+- Participants saw 51 experimental items and 95 filler items, as well as initial 9 practice items.
+- In our experimental items, we used sentences like *The coffee which the barista who the owner hired last week brewed tastes bitter.*.
+- We manipulated whether participants saw the second verb or not. We also manipulated whether there were comma present in the sentence.
+- Non missing Verb RRC: The coffee which the barista who the owner hired last week brewed tastes bitter.
+- Missing Verb RRC: The coffee which the barista who the owner hired last week tastes bitter.
+- Non Missing Verb ARC: The coffee, which the barista who the owner hired last week brewed, tastes bitter.
+- Missing Verb ARC: The coffee, which the barista who the owner hired last week, tastes bitter.
+- As for fillers, we have used
+  - clauses with just one embedding, like *The coffee which the barista brewed tastes bitter.*.
+  - clauses with right branching, like *The orchestra hired a conductor, who is known for forgetting to bring his baton.*.
+  - clauses with coordinate structure, like *Every student in the art school carries an instrument and practices in public for their concerts.*
+  - clauses with island violations, like *Mary forgot which planet she wanted to return the book on Sunday before the demon destroys.*.
+- Participants were shown a single condition from an item. Lists were distributed in a Latin Square design. Throughout the experiment, the half of the all materials participants saw were grammatical.
+- Participants were asked to read the sentences as naturally as possible by pressing the space bar.
+- After reading the sentence, they were asked to judge the naturalness of the sentence using a 7-point Likert scale.
+
+# Results
+
+## Descriptive Statistics
+
+```{r read data, echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+
+data <- read_csv("../results/ques.csv")
+data_clean <- data %>%
+    filter(!is.na(value)) # Remove rows where 'value' is NA
+
+
+# Summarize the data
+summary_data <- data_clean %>%
+    group_by(condition, value) %>%
+    summarise(count = n(), .groups = "drop") %>%
+    mutate(rating = factor(value, levels = 7:1)) %>%
+    mutate(myLabel = recode(condition,
+        "Base" = "Non-missing Verb RRC",
+        "Comma" = "Non-missing Verb ARC",
+        "MissingVBase" = "Missing Verb RRC",
+        "MissingVComma" = "Missing Verb ARC"
+    ))
+
+
+# averages
+q_avgs <- data_clean %>%
+    group_by(v2, comma) %>%
+    summarise(
+        rating = mean(value, na.rm = TRUE),
+        sd = sd(value, na.rm = TRUE),
+        n = n(),
+        lower_ci = rating - qt(0.975, df = n - 1) * sd / sqrt(n),
+        upper_ci = rating + qt(0.975, df = n - 1) * sd / sqrt(n)
+    ) %>%
+    mutate(
+        myLabel = if_else(
+            comma == "0",
+            if_else(
+                v2 == "0",
+                "Missing Verb RRC",
+                "Non-missing Verb RRC"
+            ),
+            if_else(
+                v2 == "0",
+                "Missing Verb ARC",
+                "Non-missing Verb ARC"
+            )
+        )
+        %>%
+            factor(levels = c(
+                "Missing Verb RRC",
+                "Non-missing Verb RRC",
+                "Missing Verb ARC",
+                "Non-missing Verb ARC"
+            ))
+    )
+
+
+summary_data_adjusted <- summary_data %>%
+    group_by(myLabel) %>%
+    mutate(
+        cumulative_count = cumsum(count) / sum(count), # Normalize cumulative count to [0, 1]
+        middle_of_bar = (cumsum(count) - count / 2) / sum(count)
+    ) # Position at the center of each segment
+
+
+plot_proportions <- ggplot(summary_data, aes(x = myLabel, y = count, fill = rating)) +
+    geom_bar(stat = "identity", position = "fill", color = "black", width = 0.8) +
+    scale_fill_grey(start = 0.2, end = 0.8) +
+    scale_x_discrete(expand = expansion(mult = c(0.2, 0.2))) +
+    labs(y = NULL, x = NULL, fill = "Rating") +
+    theme_minimal() +
+    # Remove y-axis breaks and texts
+    scale_y_continuous(labels = NULL, breaks = NULL) +
+    # Print rating values for the "Missing Verb ARC" condition
+    geom_text(
+        data = summary_data_adjusted,
+        aes(label = rating, y = middle_of_bar), # Position text at the center of each segment
+        size = 4, hjust = 0, color = "white", fontface = "bold", vjust = 0.5 # Adjust vjust to center text vertically
+    ) +
+    theme(legend.position = "none")
+
+```
+
+```{r, echo=FALSE}
+#| fig-cap: "Plot of Proportion of Ratings by condition"
+plot_proportions
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+total_q <- data_clean %>%
+    group_by(v2, comma) %>%
+    dplyr::summarize(Total = n())
+total_q$comma <- as.factor(total_q$comma)
+total_q$v2 <- as.factor(total_q$v2)
+data_clean$comma <- as.factor(data_clean$comma)
+data_clean$v2 <- as.factor(data_clean$v2)
+
+dist_q <- data_clean %>%
+    group_by(v2, comma, value) %>%
+    dplyr::summarize(Count = n()) %>%
+    left_join(total_q) %>%
+    mutate(
+        Prop = Count / Total,
+        myLabel = if_else(
+            comma == "0",
+            if_else(
+                v2 == "0",
+                "Missing Verb RRC",
+                "Non-missing Verb RRC"
+            ),
+            if_else(
+                v2 == "0",
+                "Missing Verb ARC",
+                "Non-missing Verb ARC"
+            )
+        )
+        %>%
+            factor(levels = c(
+                "Missing Verb RRC",
+                "Non-missing Verb RRC",
+                "Missing Verb ARC",
+                "Non-missing Verb ARC"
+            ))
+    )
+
+dist_q$rating <- dist_q$value
+
+dist_q$rating <- as.factor(dist_q$rating)
+
+# dist_q <- dist_q %>%
+#     left_join(q_avgs %>% select(v2, comma, lower_ci, upper_ci), by = c("v2", "comma"))
+
+proportions_with_means <- ggplot(dist_q) +
+    aes(
+        x = rating,
+        color = rating,
+        y = Prop # Use the Prop variable from dist_q
+    ) +
+    geom_vline(
+        data = q_avgs,
+        mapping = aes(xintercept = rating),
+        colour = "black"
+    ) +
+    geom_point(stat = "identity", size = 2) +
+    scale_x_discrete() +
+    facet_wrap(vars(myLabel), ncol = 1) +
+    scale_y_continuous(limits = c(0, 0.3)) +
+    scale_color_grey(
+        start = 0.8, end = 0.2,
+        guide = "none"
+    ) +
+    labs(
+        title = "Naturalness",
+        y = "Proportion of Responses",
+        x = "Response"
+    ) +
+    theme_bw() +
+    theme(
+        strip.background = element_rect(fill = "black"),
+        strip.text = element_text(color = "white")
+    )
+
+
+
+```
+
+
+```{r, echo=FALSE}
+#| fig-cap: "Plot of Proportion of Ratings by condition, as well as the mean ratings for each condition"
+proportions_with_means
+```
+
+
+
+```{r, echo=FALSE}
+avgs <- data_clean %>%
+    group_by(v2, comma) %>%
+    summarise(
+        rating = mean(value, na.rm = TRUE),
+        sd = sd(value, na.rm = TRUE),
+        n = n(),
+        se = sd / sqrt(n)
+    ) %>%
+    mutate(
+        myLabel = if_else(
+            comma == "0",
+            if_else(
+                v2 == "0",
+                "Missing Verb RRC",
+                "Non-missing Verb RRC"
+            ),
+            if_else(
+                v2 == "0",
+                "Missing Verb ARC",
+                "Non-missing Verb ARC"
+            )
+        )
+        %>%
+            factor(levels = c(
+                "Missing Verb RRC",
+                "Non-missing Verb RRC",
+                "Missing Verb ARC",
+                "Non-missing Verb ARC"
+            ))
+    )
+
+# plot qa_avgs with v2 and comma, have the lower ci and upper ci as a error bar. have the mean as a point, make the plot look nice, and make the facetwrap with v2
+rating_avgs_plot <- ggplot(avgs) +
+    aes(
+        x = myLabel,
+        y = rating
+    ) +
+    geom_errorbar(
+        aes(ymin = rating - se, ymax = rating + se),
+        width = 0.2
+    ) +
+    geom_point(stat = "identity", size = 2) +
+    labs(
+        # title = "Naturalness",
+        y = "Rating",
+        x = "Condition"
+    ) +
+    theme_bw() +
+    theme(
+        strip.background = element_rect(fill = "black"),
+        strip.text = element_text(color = "white")
+    )
+
+
+
+```
+
+```{r, echo=FALSE}
+#| fig-cap: "Rating means and standard errors with the assumptions of a normal distributions. Error bars are standard errors. These are just tendencies and do not mean much else"
+rating_avgs_plot
+```
+
+
+
+
+
+```{r, echo=FALSE}
+data_clean$rt <- as.numeric(data_clean$rt)
+qa_avgs <- data_clean %>%
+    group_by(v2, comma) %>%
+    summarise(
+        mean = mean(rt, na.rm = TRUE),
+        sd = sd(rt, na.rm = TRUE),
+        n = n(),
+        se = sd / sqrt(n)
+    ) %>%
+    mutate(
+        myLabel = if_else(
+            comma == "0",
+            if_else(
+                v2 == "0",
+                "Missing Verb RRC",
+                "Non-missing Verb RRC"
+            ),
+            if_else(
+                v2 == "0",
+                "Missing Verb ARC",
+                "Non-missing Verb ARC"
+            )
+        )
+        %>%
+            factor(levels = c(
+                "Missing Verb RRC",
+                "Non-missing Verb RRC",
+                "Missing Verb ARC",
+                "Non-missing Verb ARC"
+            ))
+    )
+
+# plot qa_avgs with v2 and comma, have the lower ci and upper ci as a error bar. have the mean as a point, make the plot look nice, and make the facetwrap with v2
+qa_answer_rt <- ggplot(qa_avgs) +
+    aes(
+        x = myLabel,
+        y = mean
+    ) +
+    geom_errorbar(
+        aes(ymin = mean - se, ymax = mean + se),
+        width = 0.2
+    ) +
+    geom_point(stat = "identity", size = 2) +
+    labs(
+        # title = "Naturalness",
+        y = "Answer Time",
+        x = "Condition"
+    ) +
+    theme_bw() +
+    theme(
+        strip.background = element_rect(fill = "black"),
+        strip.text = element_text(color = "white")
+    )
+
+
+
+```
+
+
+```{r, echo=FALSE}
+#| fig-cap: "Rating Answer Response Time by experimental condition. Error bars are standard errors."
+qa_answer_rt
+```
+
+
+
+
+
+# Discussion
+
+Discuss the significance of the results, their implications, and any limitations or sources of error in the experiment.
+
+# Conclusion
+
+Summarize the key findings of the experiment and draw conclusions based on the results.
+
+# References
+
+List any references or sources that were used in the experiment report.
